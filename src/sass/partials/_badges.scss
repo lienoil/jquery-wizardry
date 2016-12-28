@@ -1,0 +1,16 @@
+.badge {
+	&-error {
+		background-color: $danger;
+		width: 5px;
+		height: 5px;
+		border-radius: 50%;
+	}
+}
+
+.wizard-nav {
+	.badge-error {
+		position: absolute;
+		top: -5px;
+		right: -8px;
+	}
+}

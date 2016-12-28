@@ -1,0 +1,133 @@
+.wizard {
+	&-form {
+		@extend .card;
+		min-width: $wizard-form-width;
+		display: block;
+		overflow: hidden;
+		&-default {
+			// border: $border-default;
+		}
+	}
+
+	&-form-center {
+		margin: 0 auto;
+	}
+
+	&-title {
+		font-size: $font-size-base;
+		padding: $padding;
+	}
+
+	&-nav {
+		border-top: $border-default;
+		border-bottom: $border-default;
+		padding: 0 $padding;
+		margin-bottom: 0;
+		table-layout: fixed;
+		overflow-x: scroll;
+		transition: all 0.2s ease-in-out;
+		&-item {
+			padding: $padding-sm $padding;
+			float: none;
+			display: table-cell;
+			&:first-child {
+				margin-left: 0;
+			}
+			&:last-child {
+				margin-right: 0;
+			}
+			&.active {
+				border-bottom: 2px solid $primary-color;
+			}
+			&.has-error {
+				background: transparentize($danger, 0.9);
+				border-bottom: 2px solid transparentize($danger, 0.9);
+			}
+		}
+		&-link {
+			display: inline-block;
+			text-align: center;
+			position: relative;
+			border: none;
+			margin: 0;
+			padding: 0;
+			background-color: transparent;
+			cursor: pointer;
+			white-space: nowrap;
+			-webkit-overflow-scrolling: touch;
+			&:hover, &:active, &:focus {
+				text-decoration: none;
+			}
+			&[disabled] {
+				cursor: not-allowed;
+			}
+		}
+	}
+
+	&-steps {
+		// display: block;
+		width: 100%;
+		overflow: hidden;
+		position: relative;
+		transition: all .2s ease-in-out;
+
+		// width: 100%;
+		overflow-x: scroll;
+		table-layout: fixed;
+	}
+
+	&-step {
+		padding: $padding 0;
+		// position: absolute;
+		transition: all 0.2s ease-in-out;
+		width: 100%;
+		// z-index: 8;
+		// opacity: 0;
+		top: 0;
+		left: 0;
+
+		position: relative;
+		display: table-cell;
+		vertical-align: top;
+
+		&.inactive {
+			opacity: 0;
+		}
+
+		&.active {
+			position: relative;
+			background: $light-color;
+			z-index: 9;
+			opacity: 1;
+		}
+
+		&.has-error {
+			.wizard-step-title {
+				background-color: transparentize($danger, 0.9);
+				color: $danger;
+			}
+		}
+
+		&-title {
+			padding: $padding-sm $padding;
+			font-size: $font-size-base*1.2;
+			background-color: transparentize($primary-color, 0.9);
+			color: $primary-color;
+		}
+
+		.error {
+			&input, &select, &textarea, &.form-control {
+				border: 1px solid $danger;
+			}
+		}
+		label.error {
+			font-size: $font-size-base*0.9;
+			color: $danger;
+		}
+	}
+
+	&-footer {
+		padding: $padding;
+		border-top: $border-default;
+	}
+}

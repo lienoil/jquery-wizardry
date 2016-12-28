@@ -1,0 +1,123 @@
+// Color
+$primary: 			#147ec7;
+$secondary: 		#f07b47;
+$success: 			#5cb85c;
+$info: 				#5bc0de;
+$warning: 			#f0ad4e;
+$danger: 			#ed5959;
+
+$primary-color: 	$primary;
+$secondary-color: 	$secondary;
+
+$inverse: 			invert($primary);
+$inverse-color: 	$inverse;
+
+$dark: 				#5c5858;
+$dark-color: 		$dark;
+
+$light: 			#ffffff;
+$light-color: 		$light;
+
+$success-color:		$success;
+$info-color:		$info;
+$warning-color:		$warning;
+$danger-color:		$danger;
+
+$gray: 				#888888;
+$gray-light: 		lighten($gray, 5%);
+$gray-dark: 		darken($gray, 50%);
+
+$body-bg: 			#ffffff;
+
+$white: 			#ffffff;
+$black: 			#000000;
+
+// Font
+$font-size-root: 		18px;
+$font-size-base: 		1rem; //4vh;
+
+$font-size-h1: 			2.75rem;
+$font-size-h2: 			2.5rem;
+$font-size-h3: 			2rem;
+$font-size-h4: 			1.75rem;
+$font-size-h5: 			1.5rem;
+$font-size-h6: 			1rem;
+
+$line-height-normal:	1;
+$line-height-base: 		1.25;
+$line-height-tall: 		1.5;
+$line-height-taller: 	1.75;
+$line-height-tallest: 	2;
+
+$primary-font-family: 		"Lato", "Roboto", "Open Sans", "Helvetica Nueue", sans-serif;
+$secondary-font-family: 	'Raleway', 'Lato Bold', 'Lato', serif;
+$heading-font-family: 		$primary-font-family;
+$subheading-font-family: 	$secondary-font-family;
+
+$font-weight-hairline: 	100;
+$font-weight-thin: 		200;
+$font-weight-light: 	300;
+$font-weight-bold: 		500;
+$font-weight-heading: 	600;
+$font-weight-bolder: 	700;
+$font-weight-heavy: 	800;
+$font-weight-black: 	900;
+
+$kerning-wide: 		4px;
+$kerning-wider: 	6px;
+$kerning-widest: 	8px;
+$kerning-narrow: 	3px;
+$kerning-narrower:  2px;
+$kerning-base: 		1px;
+
+// Margin
+$margin: 	1rem;
+$margin-xs: $margin/4;
+$margin-sm: $margin/2;
+$margin-lg: $margin*2;
+$margin-xl: $margin*4;
+
+// Padding
+$padding: 	 1rem;
+$padding-xs: $padding/4;
+$padding-sm: $padding/2;
+$padding-lg: $padding*2;
+$padding-xl: $padding*4;
+
+// Transitions
+$transition-default: all 0.3s ease-in-out;
+
+// Body
+$is_body-overflow-x-hidden: true;
+
+// Bootstrap Override
+$brand-primary: 			$primary !default;
+$brand-success: 			$success !default;
+$brand-info: 				$info !default;
+$brand-warning: 			$warning !default;
+$brand-danger: 				$danger !default;
+
+$border-radius:          	0 !default;
+$border-radius:          	0 !default;
+$border-radius-lg:       	2px !default;
+$border-radius-sm:       	0 !default;
+$border-radius-base: 		0 !default;
+$border-radius-large:   	0 !default;
+$border-radius-small:  		0 !default;
+
+$grid-gutter-width: 		30px !default;
+
+$container-tablet: 			(720px + $grid-gutter-width) !default;
+$container-sm:	 			$container-tablet !default;
+
+$container-desktop: 		(940px + $grid-gutter-width) !default;
+$container-md: 				$container-desktop !default;
+
+$container-large-desktop:	(1340px + $grid-gutter-width) !default;
+$container-lg: 				$container-large-desktop !default;
+
+// Border
+$border-default: 			1px solid rgba(0,0,0,0.1);
+
+// Wizard
+$wizard-form-width: 		600px;

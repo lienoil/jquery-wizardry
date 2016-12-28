@@ -1,0 +1,277 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>Template</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="dist/css/jquery.wizardry.min.css">
+
+	<style>
+		.container-fluid {
+			padding-left: 1rem;
+			padding-right: 1rem;
+		}
+	</style>
+</head>
+<body>
+	<!--[if lt IE 8]>
+		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+	<![endif]-->
+	<noscript>
+		Javascript must be enabled to run this site properly.
+	</noscript>
+
+	<div class="container">
+		<div class="col-sm-12">
+			<form action="" class="wizard-form wizard-form-default" method="GET" data-wizardry='{"hasUrlHash":false, "validatePerSlide":false}' novalidate>
+				<h3 class="wizard-title">Online Submission Form</h3>
+
+				<div class="wizard-steps">
+					<fieldset id="details-section" class="wizard-step active">
+						<legend class="wizard-step-title"><strong>Details</strong></legend>
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col-sm-2">
+									<div class="form-group">
+										<label for="designation">Designation</label>
+										<select name="designation" id="designation" class="form-control">
+											<option value="Mr. ">Mr.</option>
+											<option value="Ms. ">Ms.</option>
+											<option value="Mrs. ">Mrs.</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-sm-10">
+									<label for="fullname">Full name</label>
+									<div class="row">
+										<div class="col-md-4 col-xs-12">
+											<div class="form-group">
+												<input type="text" name="firstname" id="fullname" class="form-control" placeholder="First name" required>
+											</div>
+										</div>
+										<div class="col-md-4 col-xs-12">
+											<div class="form-group">
+												<input type="text" name="middlename" id="firstname" class="form-control" placeholder="Middle name">
+											</div>
+										</div>
+										<div class="col-md-4 col-xs-12">
+											<div class="row">
+												<div class="col-md-9 col-xs-7">
+													<div class="form-group">
+														<input type="text" name="lastname" id="lastname" class="form-control" placeholder="Last name" required>
+													</div>
+												</div>
+												<div class="col-md-3 col-xs-5">
+													<div class="form-group">
+														<input type="text" name="suffixname" id="suffixname" class="form-control" placeholder="Suffix name">
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col-sm-3">
+									<div class="form-group">
+										<label for="nric">NRIC / Passport No.</label>
+										<input type="text" class="form-control" name="nric" id="nric" required>
+									</div>
+								</div>
+								<div class="col-sm-3">
+									<div class="form-group">
+										<label for="citizenship">Citizenship</label>
+										<input type="text" class="form-control" name="citizenship" id="citizenship" required>
+									</div>
+								</div>
+								<div class="col-sm-3">
+									<div class="form-group">
+										<label for="contact_number">Contact No.</label>
+										<input type="text" class="form-control" name="contact_number" id="contact_number" required>
+									</div>
+								</div>
+								<div class="col-sm-3">
+									<div class="form-group">
+										<label for="email">Email</label>
+										<input type="email" name="email" id="email" class="form-control" data-rule-email="true" data-msg-email="Let us spam you, enter a valid email address.">
+									</div>
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col-sm-6">
+									<div class="form-group">
+										<label for="civil_status">Civil Status</label>
+										<select name="civil_status" id="civil_status" class="form-control" data-show="#dd" data-hide="#sss,#spouse-participation-section" data-on="single" required>
+											<option value="single">Single</option>
+											<option value="married">Married</option>
+											<option value="divorced">Divorced</option>
+											<option value="windowed">Windowed</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-sm-6">
+									<div class="form-group">
+										<label for="language">The language of the Will:</label>
+										<select name="language" id="language" class="form-control" required>
+											<option value="en">English</option>
+											<option value="ms">Malay</option>
+											<option value="ta">Tamil</option>
+											<option value="cmn">Mandarin</option>
+										</select>
+									</div>
+								</div>
+							</div>
+
+							<div class="row" id="spouse-participation-section">
+								<div class="col-sm-6">
+									<div class="form-group">
+										<label for="spouse_participation">Spouse Participation</label>
+										<br>
+										<input type="radio" name="spouse_participation" id="spouse_participation" class="form-control-radio" value="Yes"> Yes
+										<br>
+										<input type="radio" name="spouse_participation" id="spouse_participation" class="form-control-radio" value="No" checked> No
+									</div>
+								</div>
+							</div>
+						</div>
+					</fieldset>
+					<fieldset id="background-section" class="wizard-step">
+						<div id="dd" class="container-fluid">
+							<div class="row">
+								<div class="col-sm-12 text-xs-center">
+									<p class="text-muted">You can skip this section since you are Single ;)</p>
+								</div>
+							</div>
+						</div>
+						<legend class="wizard-step-title"><strong>Background</strong></legend>
+						<div id="sss" class="container-fluid">
+							<div class="row">
+								<div class="col-sm-2">
+									<div class="form-group">
+										<label for="hiddenfield">s</label>
+										<select name="hiddenfield" id="hiddenfield" class="form-control">
+											<option value="">Mr.</option>
+											<option value="all">All.</option>
+											<option value="Mrs. ">Mrs.</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-sm-5">
+									<div class="form-group">
+										<label>Fullname</label>
+										<input type="text" name="hiddentext" required class="form-control">
+									</div>
+								</div>
+							</div>
+						</div>
+					</fieldset>
+					<fieldset id="properties-section" class="wizard-step">
+						<legend class="wizard-step-title"><strong>Properties</strong></legend>
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col-sm-2">
+									<div class="form-group">
+										<label for="designation">Designation</label>
+										<input type="email" name="email" class="form-control" id="email" required>
+										<select name="designation" id="designation" class="form-control">
+											<option value="Mr. ">Mr.</option>
+											<option value="Ms. ">Ms.</option>
+											<option value="Mrs. ">Mrs.</option>
+										</select>
+									</div>
+								</div>
+							</div>
+						</div>
+					</fieldset>
+					<fieldset id="a-section" class="wizard-step">
+						<legend class="wizard-step-title"><strong>A Section</strong></legend>
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col-sm-8 offset-sm-2 text-xs-center text-center">
+									<h1>Alright, sparky</h1>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae voluptates maiores placeat, similique quisquam, harum cum vero facilis aspernatur repellendus vitae totam aut eligendi labore! Dignissimos eligendi, corporis officia amet!</p>
+								</div>
+							</div>
+						</div>
+					</fieldset>
+					<fieldset id="b-section" class="wizard-step">
+						<legend class="wizard-step-title"><strong>b Section</strong></legend>
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col-sm-8 offset-sm-2 text-xs-center text-center">
+									<h1>Alright, sparky</h1>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae voluptates maiores placeat, similique quisquam, harum cum vero facilis aspernatur repellendus vitae totam aut eligendi labore! Dignissimos eligendi, corporis officia amet!</p>
+								</div>
+							</div>
+						</div>
+					</fieldset>
+					<fieldset id="c-section" class="wizard-step">
+						<legend class="wizard-step-title"><strong>C Section</strong></legend>
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col-sm-8 offset-sm-2 text-xs-center text-center">
+									<h1>Alright, sparky</h1>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae voluptates maiores placeat, similique quisquam, harum cum vero facilis aspernatur repellendus vitae totam aut eligendi labore! Dignissimos eligendi, corporis officia amet!</p>
+								</div>
+							</div>
+						</div>
+					</fieldset>
+					<fieldset id="d-section" class="wizard-step">
+						<legend class="wizard-step-title"><strong>D Section</strong></legend>
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col-sm-8 offset-sm-2 text-xs-center text-center">
+									<h1>Alright, sparky</h1>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae voluptates maiores placeat, similique quisquam, harum cum vero facilis aspernatur repellendus vitae totam aut eligendi labore! Dignissimos eligendi, corporis officia amet!</p>
+								</div>
+							</div>
+						</div>
+					</fieldset>
+					<fieldset id="e-section" class="wizard-step">
+						<legend class="wizard-step-title"><strong>E Section</strong></legend>
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col-sm-8 offset-sm-2 text-xs-center text-center">
+									<h1>Alright, sparky</h1>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae voluptates maiores placeat, similique quisquam, harum cum vero facilis aspernatur repellendus vitae totam aut eligendi labore! Dignissimos eligendi, corporis officia amet!</p>
+								</div>
+							</div>
+						</div>
+					</fieldset>
+					<fieldset id="finish-section" class="wizard-step">
+						<legend class="wizard-step-title"><strong>Finish Will</strong></legend>
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col-sm-8 offset-sm-2 text-xs-center text-center">
+									<h1>Alright, sparky</h1>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae voluptates maiores placeat, similique quisquam, harum cum vero facilis aspernatur repellendus vitae totam aut eligendi labore! Dignissimos eligendi, corporis officia amet!</p>
+									<div class="form-group">
+										<button type="submit" class="btn btn-primary ladda-button" data-style="expand-left"><span class="ladda-label">Submit form</span></button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</fieldset>
+				</div>
+
+				<div class="wizard-footer">
+					<button type="button" class="btn btn-default btn-prev">Prev</button>
+					<button type="button" class="btn btn-default btn-next">Next</button>
+				</div>
+			</form>
+		</div>
+	</div>
+
+
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="bower_components/jquery-validation/dist/jquery.validate.min.js"></script>
+	<script src="src/js/jquery.wizardry.js"></script>
+</body>
+</html>

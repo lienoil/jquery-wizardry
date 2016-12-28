@@ -1,0 +1,19 @@
+@import "mixins/commons";
+@import "mixins/overlays";
+@import "variables";
+
+@import "../../bower_components/bootstrap/scss/mixins/border-radius";
+@import "../../bower_components/bootstrap/scss/mixins/clearfix";
+@import "../../bower_components/bootstrap/scss/mixins/cards";
+@import "../../bower_components/bootstrap/scss/mixins/breakpoints";
+@import "../../bower_components/bootstrap/scss/bootstrap-reboot";
+@import "../../bower_components/bootstrap/scss/card";
+@import "../vendor/ladda-bootstrap/css/ladda.scss";
+
+@import "resets";
+
+@import "partials/wizard";
+@import "partials/animations";
+@import "partials/badges";
+@import "partials/buttons";
+@import "partials/errors";

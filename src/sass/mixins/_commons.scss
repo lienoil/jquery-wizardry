@@ -1,0 +1,64 @@
+@mixin o-x-h() {
+	overflow-x: hidden;
+}
+
+// @mixin background($bg-color: #ffffff, $style: 'none') {
+// 	background-color: $bg-color;
+// 	@if ('linear' == $style) {
+// 		background: -moz-linear-gradient(top,  lighten($bg-color, 0.7) 0%, $bg-color 100%); /* FF3.6-15 */
+// 	    background: -webkit-linear-gradient(top,  lighten($bg-color, 0.7) 0%,$bg-color 100%); /* Chrome10-25,Safari5.1-6 */
+// 	    background: linear-gradient(to bottom,  lighten($bg-color, 0.7) 0%,$bg-color 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+// 	}
+// }
+
+@mixin center($alignment: 'both') {
+	position: absolute;
+	@if ($alignment == 'both') {
+		top: 50%;
+		left: 50%;
+		transform: translateX(-50%) translateY(-50%);
+	}
+
+	@if ($alignment == 'horizontal') {
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	@if ($alignment == 'vertical') {
+		top: 50%;
+		transform: translateY(-50%);
+	}
+}
+
+@mixin haf($color: inherit, $bg: inherit) {
+	&:hover, &:active, &:focus {
+		color: $color;
+		background: $bg;
+	}
+}
+
+@mixin white {
+	color: white !important;
+	@include haf(white);
+}
+
+@mixin scale-heading($by: 1) {
+	h1, .h1 {
+		font-size: $font-size-h1*$by;
+	}
+	h2, .h2 {
+		font-size: $font-size-h2*$by;
+	}
+	h3, .h3 {
+		font-size: $font-size-h3*$by;
+	}
+	h4,.h4 {
+		font-size: $font-size-h4*$by;
+	}
+	h5, .h5 {
+		font-size: $font-size-h5*$by;
+	}
+	h6, .h6 {
+		font-size: $font-size-h6*$by;
+	}
+}
