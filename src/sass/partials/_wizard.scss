@@ -1,17 +1,17 @@
 .wizard {
-	&-form {
-		@extend .card;
-		min-width: $wizard-form-width;
-		display: block;
-		overflow: hidden;
-		&-default {
-			// border: $border-default;
-		}
-	}
+	// &-form {
+	// 	@extend .card;
+	// 	min-width: $wizard-form-width;
+	// 	display: block;
+	// 	overflow: hidden;
+	// 	&-default {
+	// 		// border: $border-default;
+	// 	}
+	// }
 
-	&-form-center {
-		margin: 0 auto;
-	}
+	// &-form-center {
+	// 	margin: 0 auto;
+	// }
 
 	&-title {
 		font-size: $font-size-base;

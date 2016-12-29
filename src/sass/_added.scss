@@ -1,0 +1,41 @@
+// slider
+.slider {
+    width: 100%;
+    overflow: hidden;
+    height: 450px;
+    position: relative;
+    overflow-y: auto;
+
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        position: absolute;
+        width: 300%;
+        height: 100%;
+        top: 0;
+
+        li {
+            padding: 0;
+            margin: 0;
+            width: 33.333333%;
+            height: 100%;
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            overflow-y: auto;
+
+
+            .wizard-step {
+                background: $light !important;
+                min-height: 450px;
+                float: left;
+
+                .wizard-step-title {
+                    background: #cde1ef !important;
+                }
+            }
+        }
+    }
+}

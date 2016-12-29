@@ -441,7 +441,7 @@ output {
   display: none !important;
 }
 
-.card, .wizard-form {
+.card {
   position: relative;
   display: block;
   margin-bottom: 0.75rem;
@@ -479,11 +479,11 @@ output {
   margin-left: 1.25rem;
 }
 
-.card > .list-group:first-child .list-group-item:first-child, .wizard-form > .list-group:first-child .list-group-item:first-child {
+.card > .list-group:first-child .list-group-item:first-child {
   border-top-right-radius: 0;
   border-top-left-radius: 0;
 }
-.card > .list-group:last-child .list-group-item:last-child, .wizard-form > .list-group:last-child .list-group-item:last-child {
+.card > .list-group:last-child .list-group-item:last-child {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
@@ -661,7 +661,7 @@ output {
     table-layout: fixed;
     border-spacing: 1.25rem 0;
   }
-  .card-deck .card, .card-deck .wizard-form {
+  .card-deck .card {
     display: table-cell;
     margin-bottom: 0;
     vertical-align: top;
@@ -678,40 +678,39 @@ output {
     width: 100%;
     table-layout: fixed;
   }
-  .card-group .card, .card-group .wizard-form {
+  .card-group .card {
     display: table-cell;
     vertical-align: top;
   }
-  .card-group .card + .card, .card-group .wizard-form + .card, .card-group .card + .wizard-form, .card-group .wizard-form + .wizard-form {
+  .card-group .card + .card {
     margin-left: 0;
     border-left: 0;
   }
-  .card-group .card:first-child, .card-group .wizard-form:first-child {
+  .card-group .card:first-child {
     border-bottom-right-radius: 0;
     border-top-right-radius: 0;
   }
-  .card-group .card:first-child .card-img-top, .card-group .wizard-form:first-child .card-img-top {
+  .card-group .card:first-child .card-img-top {
     border-top-right-radius: 0;
   }
-  .card-group .card:first-child .card-img-bottom, .card-group .wizard-form:first-child .card-img-bottom {
+  .card-group .card:first-child .card-img-bottom {
     border-bottom-right-radius: 0;
   }
-  .card-group .card:last-child, .card-group .wizard-form:last-child {
+  .card-group .card:last-child {
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
   }
-  .card-group .card:last-child .card-img-top, .card-group .wizard-form:last-child .card-img-top {
+  .card-group .card:last-child .card-img-top {
     border-top-left-radius: 0;
   }
-  .card-group .card:last-child .card-img-bottom, .card-group .wizard-form:last-child .card-img-bottom {
+  .card-group .card:last-child .card-img-bottom {
     border-bottom-left-radius: 0;
   }
-  .card-group .card:not(:first-child):not(:last-child), .card-group .wizard-form:not(:first-child):not(:last-child) {
+  .card-group .card:not(:first-child):not(:last-child) {
     border-radius: 0;
   }
-  .card-group .card:not(:first-child):not(:last-child) .card-img-top, .card-group .wizard-form:not(:first-child):not(:last-child) .card-img-top,
-  .card-group .card:not(:first-child):not(:last-child) .card-img-bottom,
-  .card-group .wizard-form:not(:first-child):not(:last-child) .card-img-bottom {
+  .card-group .card:not(:first-child):not(:last-child) .card-img-top,
+  .card-group .card:not(:first-child):not(:last-child) .card-img-bottom {
     border-radius: 0;
   }
 }
@@ -722,7 +721,7 @@ output {
     -moz-column-gap: 1.25rem;
          column-gap: 1.25rem;
   }
-  .card-columns .card, .card-columns .wizard-form {
+  .card-columns .card {
     display: inline-block;
     width: 100%;
   }
@@ -1098,14 +1097,42 @@ output {
   font-family: Georgia, serif;
 }
 
-.wizard-form {
-  min-width: 600px;
-  display: block;
+.slider {
+  width: 100%;
   overflow: hidden;
+  height: 450px;
+  position: relative;
+  overflow-y: auto;
 }
-.wizard-form-center {
-  margin: 0 auto;
+.slider ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: absolute;
+  width: 300%;
+  height: 100%;
+  top: 0;
 }
+.slider ul li {
+  padding: 0;
+  margin: 0;
+  width: 33.333333%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  overflow-y: auto;
+}
+.slider ul li .wizard-step {
+  background: #ffffff !important;
+  min-height: 450px;
+  float: left;
+}
+.slider ul li .wizard-step .wizard-step-title {
+  background: #cde1ef !important;
+}
+
 .wizard-title {
   font-size: 1rem;
   padding: 1rem;

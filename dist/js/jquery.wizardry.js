@@ -31,6 +31,7 @@
 
 			self.setSectionsParent(self);
 			self.handleSectionsParent(self);
+			self.onWindowResize(self);
 
 			if (self.options.hasNav) {
 				self.setNav(self);
@@ -235,7 +236,7 @@
 		},
 
 		setSectionsParent: function (self) {
-			self.$sectionsParent = self.$elem.find('.wizard-steps');
+			self.$sectionsParent = self.$elem.find('.slider ul li');
 		},
 
 		getSectionsParent: function () {
@@ -246,10 +247,25 @@
 			var $sectionsParent = self.getSectionsParent();
 			var $sections = self.getSections();
 			var origSectionWidth = $sections.outerWidth();
-			var outerWidth = $sectionsParent.outerWidth();
-			$sectionsParent.css({'overflow-x':'hidden'});
-			$sectionsParent.outerWidth(outerWidth * $sections.length);
-			$sections.outerWidth(origSectionWidth);
+			var parentWidth = origSectionWidth;//$sectionsParent.outerWidth();
+			// $sectionsParent.css({'overflow-x':'hidden'});
+			// $sectionsParent.outerWidth(parentWidth * $sections.length);
+			// $sections.outerWidth(origSectionWidth);
+			console.log($sections.outerWidth());
+		},
+
+		onWindowResize: function (self) {
+			// $(document).ready(function () {
+				var resizeTimer;
+				$(window).on('resize wizardryResize', function (e) {
+					clearTimeout( resizeTimer );
+					resizeTimer = setTimeout( function () {
+
+						self.handleSectionsParent(self);
+
+					}, 250);
+				});//.triggerHandler('wizardryResize');
+			// });
 		},
 
 		setSections: function (self) {
@@ -284,6 +300,7 @@
 			var $parent = self.getSectionsParent();
 			var position = $section.position().left;
 			$parent.animate({left: -position}, self.options.animationDuration);
+			self.animateSectionHeight(self, $section);
 		},
 
 		animateSectionHeight: function (self, $section) {
@@ -498,4 +515,37 @@
 
 	$('[data-wizardry]').wizardry();
 
+	//slider
+	$(function() {
+        var ul = $(".slider ul");
+        var slide_count = ul.children().length;
+        var slide_width_pc = 300.0 / slide_count;
+        var slide_index = 0;
+
+        ul.find("li").each(function(indx) {
+            var left_percent = (slide_width_pc * indx) + "%";
+            $(this).css({"left":left_percent});
+            $(this).css({width:(300 / slide_count) + "%"});
+        });
+
+        // next
+		$(".wizard-footer .btn-prev").click(function() {
+		    console.log("prev button clicked");
+		    slide(slide_index - 1);
+		});
+
+		// prev
+		$(".wizard-footer .btn-next").click(function() {
+		    console.log("next button clicked");
+		    slide(slide_index + 1);
+		});
+
+        function slide(new_slide_index) {
+            if(new_slide_index < 0 || new_slide_index >= slide_count) return; 
+            var margin_left_pc = (new_slide_index * (-100)) + "%";
+            ul.animate({"margin-left": margin_left_pc}, 900, function() {
+                slide_index = new_slide_index
+            });
+        }
+    });
 })(jQuery, document);
