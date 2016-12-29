@@ -528,13 +528,11 @@
             $(this).css({width:(300 / slide_count) + "%"});
         });
 
-        // next
 		$(".wizard-footer .btn-prev").click(function() {
 		    console.log("prev button clicked");
 		    slide(slide_index - 1);
 		});
 
-		// prev
 		$(".wizard-footer .btn-next").click(function() {
 		    console.log("next button clicked");
 		    slide(slide_index + 1);
